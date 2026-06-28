@@ -24,9 +24,9 @@ import {
   Vote,
 } from "lucide-react";
 
-import { Section, SectionHeader, CTASection } from "@/components/site/Section";
-import { BillboardCard } from "@/components/site/BillboardCard";
-import { BILLBOARDS, PORTFOLIO_SAMPLES, heroImg } from "@/lib/site-data";
+import { Section, SectionHeader, CTASection } from "@/components";
+import { BillboardCard } from "@/components/BillboardCard";
+import { BILLBOARDS, PORTFOLIO_SAMPLES, heroImg } from "@/data/billboards";
 
 export const Route = createFileRoute("/")({
   head: () => ({

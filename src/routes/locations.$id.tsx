@@ -19,9 +19,15 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { Section, SectionHeader, CTASection } from "@/components/site/Section";
-import { BillboardCard } from "@/components/site/BillboardCard";
-import { BILLBOARDS, getBillboardById, type Billboard } from "@/lib/site-data";
+import {
+  BillboardCard,
+  Breadcrumb,
+  CTASection,
+  Section,
+  SectionHeader,
+  TagList,
+} from "@/components";
+import { BILLBOARDS, getBillboardById, type Billboard } from "@/data/billboards";
 
 export const Route = createFileRoute("/locations/$id")({
   head: ({ params }) => {
@@ -61,14 +67,14 @@ function BillboardDetailPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            <Link to="/" className="hover:text-gold">Home</Link>
-            <span>/</span>
-            <Link to="/locations" className="hover:text-gold">Locations</Link>
-            <span>/</span>
-            <span className="text-foreground">{b.city} — {b.area}</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: "Home", to: "/" },
+              { label: "Locations", to: "/locations" },
+              { label: `${b.city} — ${b.area}` },
+            ]}
+          />
+
 
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
             <div>
@@ -143,13 +149,8 @@ function BillboardDetailPage() {
           />
           <div className="rounded-3xl bg-card-premium p-8 shadow-elegant ring-hairline">
             <p className="text-base leading-relaxed text-muted-foreground">{b.description}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {b.tags.map((t) => (
-                <span key={t} className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3 py-1 text-xs font-semibold border border-border">
-                  {t}
-                </span>
-              ))}
-            </div>
+            <TagList items={b.tags} className="mt-6" />
+
           </div>
         </div>
       </Section>
@@ -316,13 +317,8 @@ function TagPanel({
         </span>
         <h3 className="font-display text-base font-bold">{title}</h3>
       </div>
-      <div className="mt-5 flex flex-wrap gap-2">
-        {items.map((i) => (
-          <span key={i} className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3 py-1 text-xs font-semibold border border-border">
-            {i}
-          </span>
-        ))}
-      </div>
+      <TagList items={items} className="mt-5" />
+
     </div>
   );
 }

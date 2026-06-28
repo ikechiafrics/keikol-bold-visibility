@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Eye, MapPin, Ruler } from "lucide-react";
-import type { Billboard } from "@/lib/site-data";
+import type { Billboard } from "@/data/billboards";
 
 function statusClasses(s: Billboard["availability"]) {
   if (s === "Available") return { dot: "bg-accent", text: "text-accent", bg: "bg-accent/20" };
