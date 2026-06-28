@@ -189,6 +189,3 @@ function AboutPage() {
     </>
   );
 }
-
-// silence unused
-void Globe2;
