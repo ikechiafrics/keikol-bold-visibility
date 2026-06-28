@@ -54,6 +54,14 @@ export function Footer() {
             ]}
           />
           <FooterCol
+            title="Legal"
+            links={[
+              { label: "Privacy Policy", to: "/privacy-policy" },
+              { label: "Terms of Use", to: "/terms-of-use" },
+            ]}
+          />
+
+          <FooterCol
             title="Services"
             links={[
               { label: "Billboard Advertising", to: "/locations" },
