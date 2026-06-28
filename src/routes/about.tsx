@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Eye, Globe2, Heart, Lightbulb, Sparkles, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, CheckCircle2, Eye, Heart, Lightbulb, Sparkles, TrendingUp, Users } from "lucide-react";
 
 import { PageHero, Section, SectionHeader, CTASection } from "@/components";
 
