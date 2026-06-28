@@ -22,8 +22,9 @@ export interface Billboard {
   priceRange: string;
   lighting: string;
   description: string;
-  nearbyBusinesses: string[];
   recommendedIndustries: string[];
+  bestFor: string[];
+  nearbyLandmarks: string[];
   image: string;
   tags: string[];
 }
@@ -41,14 +42,15 @@ export const BILLBOARDS: Billboard[] = [
     priceRange: "Contact for pricing",
     lighting: "Digital display / 24-hour visibility",
     description:
-      "A flagship digital placement along one of Lagos' busiest commercial corridors. Designed for high-frequency brand exposure to commuters, professionals, and shoppers.",
-    nearbyBusinesses: ["Shopping malls", "Corporate offices", "Restaurants", "Luxury residential"],
+      "This premium billboard location gives brands strong visibility along one of Lagos' most active commercial and commuter corridors. It is ideal for businesses that want to reach professionals, residents, shoppers, and daily commuters.",
     recommendedIndustries: ["Real Estate", "Banking", "Telecom", "Restaurants", "FMCG", "Fashion"],
+    bestFor: ["Product launches", "Premium brand awareness", "Real estate campaigns", "High-visibility consumer campaigns"],
+    nearbyLandmarks: ["Commercial roads", "Shopping areas", "Residential traffic", "Restaurants", "Commuter routes", "Lifestyle districts"],
     image: locLagos,
-    tags: ["High Traffic", "Digital", "Premium"],
+    tags: ["Lagos", "Digital", "Available", "Premium Visibility", "High Traffic"],
   },
   {
-    id: "abuja-cbd",
+    id: "abuja-central-business-district",
     city: "Abuja",
     area: "Central Business District",
     landmark: "CBD business corridor",
@@ -59,11 +61,12 @@ export const BILLBOARDS: Billboard[] = [
     priceRange: "Contact for pricing",
     lighting: "Illuminated",
     description:
-      "Positioned in Abuja's professional core, ideal for finance, government-facing and corporate campaigns seeking credibility and reach.",
-    nearbyBusinesses: ["Government offices", "Banks", "Hotels", "Conference centres"],
-    recommendedIndustries: ["Banking", "Government Campaigns", "Technology", "Real Estate", "Events"],
+      "This location is positioned for visibility in Abuja's business environment, making it suitable for brands that want credibility, corporate presence, and professional audience reach.",
+    recommendedIndustries: ["Finance", "Government Campaigns", "Technology", "Real Estate", "Events"],
+    bestFor: ["Corporate campaigns", "Public awareness", "Financial services", "Premium brand positioning"],
+    nearbyLandmarks: ["Offices", "Government areas", "Business districts", "Commuter routes", "Commercial roads"],
     image: locAbuja,
-    tags: ["Corporate", "Illuminated", "Capital"],
+    tags: ["Abuja", "Static", "Available", "Corporate Visibility", "Business District"],
   },
   {
     id: "port-harcourt-aba-road",
@@ -77,11 +80,12 @@ export const BILLBOARDS: Billboard[] = [
     priceRange: "Contact for pricing",
     lighting: "Digital display",
     description:
-      "An upcoming digital site on one of Port Harcourt's busiest commercial routes. Built for high-impact awareness and product campaigns.",
-    nearbyBusinesses: ["Retail outlets", "Restaurants", "Office complexes", "Markets"],
+      "This billboard placement is designed for visibility along one of Port Harcourt's active commercial routes, helping brands reach commuters, shoppers, and local businesses.",
     recommendedIndustries: ["FMCG", "Telecom", "Restaurants", "Events", "Education"],
+    bestFor: ["Retail promotions", "Local awareness", "Food campaigns", "Education campaigns", "Consumer brand visibility"],
+    nearbyLandmarks: ["Commercial roads", "Shopping areas", "Offices", "Restaurants", "Commuter routes"],
     image: locPh,
-    tags: ["Digital", "Commercial"],
+    tags: ["Port Harcourt", "Digital", "Coming Soon", "Commercial Road", "Consumer Visibility"],
   },
   {
     id: "kano-commercial-district",
@@ -95,11 +99,12 @@ export const BILLBOARDS: Billboard[] = [
     priceRange: "Contact for pricing",
     lighting: "Illuminated",
     description:
-      "A strategic static placement in Kano's trade-heavy commercial district, ideal for retail, FMCG, and consumer-facing campaigns.",
-    nearbyBusinesses: ["Markets", "Retail", "Wholesale outlets", "Banks"],
+      "This billboard gives brands access to a busy commercial environment, making it suitable for businesses that want strong local visibility and repeated daily exposure.",
     recommendedIndustries: ["Retail", "FMCG", "Banking", "Education", "Events"],
+    bestFor: ["Mass-market awareness", "Retail campaigns", "Product visibility", "Local business promotion"],
+    nearbyLandmarks: ["Retail areas", "Commercial roads", "Markets", "Commuter routes", "Local business districts"],
     image: locKano,
-    tags: ["Static", "Commerce"],
+    tags: ["Kano", "Static", "Coming Soon", "Retail Visibility", "Commercial District"],
   },
   {
     id: "lagos-victoria-island",
@@ -113,11 +118,12 @@ export const BILLBOARDS: Billboard[] = [
     priceRange: "Contact for pricing",
     lighting: "Illuminated",
     description:
-      "A premium illuminated placement in Lagos' lifestyle and business hub. Perfect for luxury, finance, and hospitality brands.",
-    nearbyBusinesses: ["Luxury hotels", "Banks", "Fine dining", "Corporate headquarters"],
-    recommendedIndustries: ["Luxury Brands", "Banking", "Real Estate", "Technology", "Hospitality"],
+      "This location is ideal for premium brands seeking visibility in one of Lagos' major business and lifestyle districts. It is suited for campaigns that need credibility, elegance, and strong brand positioning.",
+    recommendedIndustries: ["Luxury Brands", "Finance", "Real Estate", "Technology", "Hospitality"],
+    bestFor: ["Premium campaigns", "Corporate branding", "Luxury visibility", "Hospitality and lifestyle promotion"],
+    nearbyLandmarks: ["Offices", "Hotels", "Restaurants", "Lifestyle districts", "Business corridors", "Premium retail areas"],
     image: locLagos,
-    tags: ["Premium", "Lifestyle", "Illuminated"],
+    tags: ["Lagos", "Premium Static", "Available", "Luxury Visibility", "Business District"],
   },
   {
     id: "abuja-airport-road",
@@ -131,13 +137,18 @@ export const BILLBOARDS: Billboard[] = [
     priceRange: "Contact for pricing",
     lighting: "Digital display",
     description:
-      "A high-visibility digital placement along the route to Nnamdi Azikiwe International Airport — ideal for travel, hospitality and telecom brands.",
-    nearbyBusinesses: ["Hotels", "Travel agencies", "Conference venues", "Corporate parks"],
+      "This billboard placement is designed for high-value route visibility, reaching travelers, professionals, government traffic, and event audiences moving through Abuja's airport corridor.",
     recommendedIndustries: ["Travel", "Hospitality", "Telecom", "Government Campaigns", "Events"],
+    bestFor: ["Travel campaigns", "Hospitality promotions", "National visibility", "Event campaigns", "Government/public messaging"],
+    nearbyLandmarks: ["Airport route", "Hotels", "Commuter traffic", "Event traffic", "Government routes", "Business travelers"],
     image: locAbuja,
-    tags: ["Digital", "Travel", "High Reach"],
+    tags: ["Abuja", "Digital", "Available Soon", "Airport Route", "Travel Visibility"],
   },
 ];
+
+export function getBillboardById(id: string): Billboard | undefined {
+  return BILLBOARDS.find((b) => b.id === id);
+}
 
 export const CITIES = ["All", "Lagos", "Abuja", "Port Harcourt", "Kano"] as const;
 export const BILLBOARD_TYPES = ["All", "Digital Billboard", "Static Billboard", "Premium Static Billboard"] as const;
