@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowRight, Filter, MapPin, Search, Target, Clock, Users, Compass } from "lucide-react";
 
-import { PageHero, Section, SectionHeader, CTASection } from "@/components/site/Section";
-import { BillboardCard } from "@/components/site/BillboardCard";
+import { PageHero, Section, SectionHeader, CTASection } from "@/components";
+import { BillboardCard } from "@/components/BillboardCard";
 import {
   BILLBOARDS,
   CITIES,
@@ -11,7 +11,7 @@ import {
   AVAILABILITIES,
   INDUSTRY_FILTERS,
   heroImg,
-} from "@/lib/site-data";
+} from "@/data/billboards";
 
 export const Route = createFileRoute("/locations/")({
   head: () => ({

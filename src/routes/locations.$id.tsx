@@ -19,9 +19,9 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { Section, SectionHeader, CTASection } from "@/components/site/Section";
-import { BillboardCard } from "@/components/site/BillboardCard";
-import { BILLBOARDS, getBillboardById, type Billboard } from "@/lib/site-data";
+import { Section, SectionHeader, CTASection } from "@/components";
+import { BillboardCard } from "@/components/BillboardCard";
+import { BILLBOARDS, getBillboardById, type Billboard } from "@/data/billboards";
 
 export const Route = createFileRoute("/locations/$id")({
   head: ({ params }) => {

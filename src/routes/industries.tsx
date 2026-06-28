@@ -14,7 +14,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-import { PageHero, Section, CTASection } from "@/components/site/Section";
+import { PageHero, Section, CTASection } from "@/components";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({

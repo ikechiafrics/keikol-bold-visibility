@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2, ChevronDown, Mail, MapPin, MessageCircle, Phone, Tag } from "lucide-react";
 
-import { PageHero, Section, SectionHeader } from "@/components/site/Section";
-import { getBillboardById } from "@/lib/site-data";
+import { PageHero, Section, SectionHeader } from "@/components";
+import { getBillboardById } from "@/data/billboards";
 
 type ContactSearch = { billboard?: string };
 

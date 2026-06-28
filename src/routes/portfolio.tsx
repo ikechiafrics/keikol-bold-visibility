@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronRight, Eye, MapPin, Palette, Sparkles, Target } from "lucide-react";
 
-import { PageHero, Section, SectionHeader, CTASection } from "@/components/site/Section";
-import { PORTFOLIO_SAMPLES } from "@/lib/site-data";
+import { PageHero, Section, SectionHeader, CTASection } from "@/components";
+import { PORTFOLIO_SAMPLES } from "@/data/billboards";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
