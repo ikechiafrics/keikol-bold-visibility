@@ -155,6 +155,11 @@ function QuoteForm({ interestedBillboard = "Not sure yet", billboardId }: { inte
 
   return (
     <form onSubmit={onSubmit} className="rounded-3xl bg-card-premium p-7 shadow-elegant ring-hairline sm:p-9">
+      <input type="hidden" name="billboardId" value={billboardId ?? ""} />
+      <div className="mb-4 rounded-xl border border-border bg-surface/60 p-4">
+        <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Interested Billboard</p>
+        <p className="mt-1 text-sm font-semibold">{interestedBillboard}</p>
+      </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Full Name" name="name" placeholder="Your full name" />
         <Field label="Company Name" name="company" placeholder="Company / brand" />
