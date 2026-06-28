@@ -1,10 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ArrowRight, CheckCircle2, ChevronDown, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown, Mail, MapPin, MessageCircle, Phone, Tag } from "lucide-react";
 
 import { PageHero, Section, SectionHeader } from "@/components/site/Section";
+import { getBillboardById } from "@/lib/site-data";
+
+type ContactSearch = { billboard?: string };
 
 export const Route = createFileRoute("/contact")({
+  validateSearch: (search: Record<string, unknown>): ContactSearch => ({
+    billboard: typeof search.billboard === "string" ? search.billboard : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Request a Quote — Keikol Billboard Advertising" },
