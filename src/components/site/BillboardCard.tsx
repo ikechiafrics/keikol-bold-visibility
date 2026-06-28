@@ -66,6 +66,7 @@ export function BillboardCard({ b, compact = false }: { b: Billboard; compact?: 
           </Link>
           <Link
             to="/contact"
+            search={{ billboard: b.id }}
             className="inline-flex items-center justify-center gap-1 rounded-xl bg-gold px-3 py-2.5 text-sm font-semibold text-primary-foreground shadow-gold transition-transform hover:-translate-y-0.5"
           >
             Request Quote <ChevronRight className="h-4 w-4" />
