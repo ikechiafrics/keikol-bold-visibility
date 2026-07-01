@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Search, MapPin, Filter, Eye, Ruler, Calendar as CalIcon,
-  ChevronLeft, ChevronRight, X, Sparkles, ArrowRight, Landmark,
+  ChevronLeft, ChevronRight, X, ArrowRight, Landmark,
 } from "lucide-react";
 
 import { PageHero, Section } from "@/components";
