@@ -223,6 +223,8 @@ export function getBillboardById(id: string): Billboard | undefined {
 export const CITIES = ["All", "Lagos", "Abuja", "Port Harcourt", "Kano"] as const;
 export const BILLBOARD_TYPES = ["All", "Digital Billboard", "Static Billboard", "Premium Static Billboard"] as const;
 export const AVAILABILITIES = ["All", "Available", "Coming Soon", "Available Soon"] as const;
+export const SIZE_CATEGORIES = ["All", "Small", "Medium", "Large", "Extra Large"] as const;
+export const PRICE_TIERS = ["All", "$", "$$", "$$$", "$$$$"] as const;
 export const INDUSTRY_FILTERS = [
   "All",
   "Real Estate",
