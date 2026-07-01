@@ -10,6 +10,9 @@ lerna-debug.log*
 node_modules
 package-lock.json
 dist
+.agents/
+.firebase/
+skills-lock.json
 dist-ssr
 .output
 .vinxi

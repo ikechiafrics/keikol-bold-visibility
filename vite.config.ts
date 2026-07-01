@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Only applies to builds run outside Lovable's own sandbox (e.g. Firebase App Hosting's
+  // build service). Lovable's sandbox always force-overrides this back to cloudflare-module,
+  // so this has no effect on Lovable builds/deploys.
+  nitro: {
+    preset: "firebase-app-hosting",
+  },
 });
