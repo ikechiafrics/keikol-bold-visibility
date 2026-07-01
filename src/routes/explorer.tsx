@@ -103,11 +103,7 @@ function ExplorerPage() {
   return (
     <>
       <PageHero
-        eyebrow={
-          <span className="inline-flex items-center gap-1.5">
-            <Sparkles className="h-3.5 w-3.5" /> Interactive Explorer
-          </span>
-        }
+        eyebrow="Interactive Explorer"
         title={<>Find your next <span className="text-gradient-gold">billboard placement</span> in seconds.</>}
         subtitle="Explore Keikol's inventory on an interactive map. Filter by city, budget, size, type, and availability — then view traffic estimates, photos, and open dates."
         image={heroImg}
