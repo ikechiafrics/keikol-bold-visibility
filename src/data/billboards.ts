@@ -10,6 +10,9 @@ import campTelecom from "@/assets/camp-telecom.jpg";
 export type Availability = "Available" | "Coming Soon" | "Available Soon";
 export type BillboardType = "Digital Billboard" | "Static Billboard" | "Premium Static Billboard";
 
+export type SizeCategory = "Small" | "Medium" | "Large" | "Extra Large";
+export type PriceTier = "$" | "$$" | "$$$" | "$$$$";
+
 export interface Billboard {
   id: string;
   city: string;
@@ -17,16 +20,24 @@ export interface Billboard {
   landmark: string;
   billboardType: BillboardType;
   size: string;
+  sizeCategory: SizeCategory;
   estimatedDailyImpressions: string;
+  dailyImpressionsNumeric: number;
   availability: Availability;
   priceRange: string;
+  priceTier: PriceTier;
+  priceMonthlyNGN: number;
   lighting: string;
   description: string;
   recommendedIndustries: string[];
   bestFor: string[];
   nearbyLandmarks: string[];
   image: string;
+  gallery: string[];
   tags: string[];
+  coordinates: { lat: number; lng: number };
+  /** ISO date strings (YYYY-MM-DD) representing booked dates in the next ~120 days. */
+  bookedDates: string[];
 }
 
 export const BILLBOARDS: Billboard[] = [
