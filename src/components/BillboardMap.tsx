@@ -66,11 +66,11 @@ export function BillboardMap({
       zoom={6}
       scrollWheelZoom
       className="h-full w-full"
-      style={{ background: "#0b0b12" }}
+      style={{ background: "#e5e7eb" }}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {billboards.map((b) => (
         <Marker
