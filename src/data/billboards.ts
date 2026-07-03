@@ -3,9 +3,13 @@ import locAbuja from "@/assets/loc-abuja.jpg";
 import locPh from "@/assets/loc-ph.jpg";
 import locKano from "@/assets/loc-kano.jpg";
 import heroImg from "@/assets/hero-billboard.jpg";
-import campRealEstate from "@/assets/camp-realestate.jpg";
-import campRestaurant from "@/assets/camp-restaurant.jpg";
-import campTelecom from "@/assets/camp-telecom.jpg";
+import portfolioRealEstate from "@/assets/portfolio-real-estate.jpg";
+import portfolioRestaurant from "@/assets/portfolio-restaurant.jpg";
+import portfolioTelecom from "@/assets/portfolio-telecom.jpg";
+import portfolioFmcg from "@/assets/portfolio-fmcg.jpg";
+import portfolioFashion from "@/assets/portfolio-fashion.jpg";
+import portfolioEducation from "@/assets/portfolio-education.jpg";
+
 
 export type Availability = "Available" | "Coming Soon" | "Available Soon";
 export type BillboardType = "Digital Billboard" | "Static Billboard" | "Premium Static Billboard";
