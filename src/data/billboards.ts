@@ -244,7 +244,7 @@ export const INDUSTRY_FILTERS = [
 
 export const PORTFOLIO_SAMPLES = [
   {
-    img: campRealEstate,
+    img: portfolioRealEstate,
     title: "Real Estate Launch",
     location: "Lagos",
     campaignType: "Billboard Awareness Campaign",
@@ -253,7 +253,7 @@ export const PORTFOLIO_SAMPLES = [
       "A premium billboard campaign designed to promote a new property development to commuters, investors, and local buyers.",
   },
   {
-    img: campRestaurant,
+    img: portfolioRestaurant,
     title: "Restaurant Promotion",
     location: "Abuja",
     campaignType: "Local Visibility Campaign",
@@ -262,7 +262,7 @@ export const PORTFOLIO_SAMPLES = [
       "A high-traffic outdoor campaign designed to drive awareness for a restaurant opening or seasonal menu promotion.",
   },
   {
-    img: campTelecom,
+    img: portfolioTelecom,
     title: "Telecom Brand Push",
     location: "Port Harcourt",
     campaignType: "High-Reach Media Campaign",
@@ -271,7 +271,7 @@ export const PORTFOLIO_SAMPLES = [
       "A mass visibility campaign built for telecom offers, brand recall, and customer acquisition.",
   },
   {
-    img: campRealEstate,
+    img: portfolioFmcg,
     title: "FMCG Product Launch",
     location: "Kano",
     campaignType: "Consumer Awareness Campaign",
@@ -280,7 +280,7 @@ export const PORTFOLIO_SAMPLES = [
       "A campaign designed to support product recognition and retail demand in busy commercial areas.",
   },
   {
-    img: campRestaurant,
+    img: portfolioFashion,
     title: "Fashion Collection Drop",
     location: "Victoria Island",
     campaignType: "Lifestyle Visibility Campaign",
@@ -289,7 +289,7 @@ export const PORTFOLIO_SAMPLES = [
       "A premium visual campaign for fashion brands looking to create aspiration and high-end brand presence.",
   },
   {
-    img: campTelecom,
+    img: portfolioEducation,
     title: "Education Admissions Campaign",
     location: "Abuja",
     campaignType: "Public Awareness Campaign",
@@ -298,5 +298,6 @@ export const PORTFOLIO_SAMPLES = [
       "A campaign concept for schools and training institutions promoting admissions or new programs.",
   },
 ];
+
 
 export { heroImg };
