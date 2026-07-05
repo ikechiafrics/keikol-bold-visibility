@@ -13,6 +13,7 @@ import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PhotographersRouteImport } from './routes/photographers'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -38,6 +39,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotographersRoute = PhotographersRouteImport.update({
+  id: '/photographers',
+  path: '/photographers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/photographers': typeof PhotographersRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/photographers': typeof PhotographersRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/photographers': typeof PhotographersRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/industries'
+    | '/photographers'
     | '/portfolio'
     | '/privacy-policy'
     | '/sitemap.xml'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/industries'
+    | '/photographers'
     | '/portfolio'
     | '/privacy-policy'
     | '/sitemap.xml'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/industries'
+    | '/photographers'
     | '/portfolio'
     | '/privacy-policy'
     | '/sitemap.xml'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  PhotographersRoute: typeof PhotographersRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -188,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/portfolio'
       fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photographers': {
+      id: '/photographers'
+      path: '/photographers'
+      fullPath: '/photographers'
+      preLoaderRoute: typeof PhotographersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  PhotographersRoute: PhotographersRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -250,13 +271,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
