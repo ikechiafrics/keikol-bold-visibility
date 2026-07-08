@@ -107,8 +107,8 @@ function PhotoHero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/70 to-background" />
       </div>
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-12 lg:px-8">
-        <div className="lg:col-span-7">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
             <Camera className="h-3.5 w-3.5 text-gold" />
             Photography & Videography
@@ -135,25 +135,6 @@ function PhotoHero() {
             >
               Browse occasions
             </a>
-          </div>
-        </div>
-        <div className="hidden lg:col-span-5 lg:block">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-elegant ring-hairline">
-            <img
-              src={heroImg}
-              alt="Photographer at work in a warm-lit studio"
-              className="h-full w-full object-cover"
-              width={1024}
-              height={1024}
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent p-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">
-                Now booking
-              </p>
-              <p className="mt-1 font-display text-lg font-bold">
-                Vetted creators, on-brand delivery.
-              </p>
-            </div>
           </div>
         </div>
       </div>
